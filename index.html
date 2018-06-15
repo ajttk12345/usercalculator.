@@ -4,9 +4,6 @@
     <meta charset="utf-8">
     <title>HCI CALCULATOR</title>
     <script src="math.js" type='text/javascript'></script>
-    <script src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
-    <script src="http://code.jquery.com/ui/1.8.21/jquery-ui.min.js"></script>
-    <script src="jquery.ui.touch-punch.min.js"></script>
     <script type="text/javascript">
           var history = [];
           var his_index = 0;
@@ -227,7 +224,9 @@
       button.op{
         border: 1.5px solid red;
         border-radius: 5px;
-        width: 50px;
+        width: 90px;
+        height: 40px;
+        font-size: 20px;
         background: black;
         color: white;
       }
@@ -236,7 +235,7 @@
         color: black;
       }
       button.graph{
-        width: 60px;
+        width: 90px;
         text-align: center;
       }
       /* textarea */
@@ -464,9 +463,9 @@
                   <button class="calc operator" id="op1" onclick="select_operator(this.value);" value="op1">산술연산</button>
                   <div class="additional" id="op1_atn">
                     <button class="op" onclick="button_click(this.value);" value="+">+</button>
-                    <button class="op" onclick="button_click(this.value);" value="-">-</button>
-                    <button class="op" onclick="button_click(this.value);" value="*">*</button><br>
-                    <button class="op" onclick="button_click(this.value);" value="/">/</button>
+                    <button class="op" onclick="button_click(this.value);" value="-">-</button><br>
+                    <button class="op" onclick="button_click(this.value);" value="*">*</button>
+                    <button class="op" onclick="button_click(this.value);" value="/">/</button><br>
                     <button class="op" onclick="button_click(this.value);" value="%">%</button>
                     <button class="op" onclick="button_click(this.value);" value="^">^</button>
                   </div>
@@ -476,18 +475,18 @@
                   <button class="calc operator" id="op2" onclick="select_operator(this.value);" value="op2">비교연산</button>
                   <div class="additional" id="op2_atn">
                     <button class="op" onclick="button_click(this.value);" value="=">=</button>
-                    <button class="op" onclick="button_click(this.value);" value="!">!</button>
+                    <button class="op" onclick="button_click(this.value);" value="!">!</button><br>
                     <button class="op" onclick="button_click(this.value);" value=">">></button>
-                    <button class="op" onclick="button_click(this.value);" value="<"><</button>
+                    <button class="op" onclick="button_click(this.value);" value="<"><</button><br>
                   </div>
                 </td>
                 <td>
                   <button class="calc operator" id="op3" onclick="select_operator(this.value);" value="op3">변수(함수)</button>
                   <div class="additional" id="op3_atn">
                     <button class="op" onclick="button_click(this.value);" value="x">x</button>
-                    <button class="op" onclick="button_click(this.value);" value="y">y</button>
-                    <button class="op" onclick="button_click(this.value);" value="z">z</button><br>
-                    <button class="op" onclick="button_click(this.value);" value="f">f</button>
+                    <button class="op" onclick="button_click(this.value);" value="y">y</button><br>
+                    <button class="op" onclick="button_click(this.value);" value="z">z</button>
+                    <button class="op" onclick="button_click(this.value);" value="f">f</button><br>
                     <button class="op" onclick="button_click(this.value);" value="g">g</button>
                     <button class="op" onclick="button_click(this.value);" value="h">h</button>
                     </div>
@@ -498,9 +497,9 @@
                   <button class="calc operator" id="op4" onclick="select_operator(this.value);" value="op4">삼각함수</button>
                   <div class="additional" id="op4_atn">
                     <button class="op" onclick="button_click(this.value);" value="sin">sin</button>
-                    <button class="op" onclick="button_click(this.value);" value="cos">cos</button>
-                    <button class="op" onclick="button_click(this.value);" value="tan">tan</button><br>
-                    <button class="op" onclick="button_click(this.value);" value="asin">asin</button>
+                    <button class="op" onclick="button_click(this.value);" value="cos">cos</button><br>
+                    <button class="op" onclick="button_click(this.value);" value="tan">tan</button>
+                    <button class="op" onclick="button_click(this.value);" value="asin">asin</button><br>
                     <button class="op" onclick="button_click(this.value);" value="acos">acos</button>
                     <button class="op" onclick="button_click(this.value);" value="atan">atan</button>
                   </div>
@@ -509,9 +508,9 @@
                   <button class="calc operator" id="op5" onclick="select_operator(this.value);" value="op5">괄호</button>
                   <div class="additional" id="op5_atn">
                     <button class="op" onclick="button_click(this.value);" value="(">(</button>
-                    <button class="op" onclick="button_click(this.value);" value=")">)</button>
-                    <button class="op" onclick="button_click(this.value);" value="[">[</button><br>
-                    <button class="op" onclick="button_click(this.value);" value="]">]</button>
+                    <button class="op" onclick="button_click(this.value);" value=")">)</button><br>
+                    <button class="op" onclick="button_click(this.value);" value="[">[</button>
+                    <button class="op" onclick="button_click(this.value);" value="]">]</button><br>
                     <button class="op" onclick="button_click(this.value);" value=";">;</button>
                     <button class="op" onclick="button_click(this.value);" value=":">:</button>
                   </div>
@@ -520,9 +519,9 @@
                   <button class="calc operator" id="op6" onclick="select_operator(this.value);" value="op6">상수</button>
                   <div class="additional" id="op6_atn">
                     <button class="op" onclick="button_click(this.value);" value="PI">PI</button>
-                    <button class="op" onclick="button_click(this.value);" value="E">E</button>
-                    <button class="op" onclick="button_click(this.value);" value="deg">deg</button><br>
-                    <button class="op" onclick="button_click(this.value);" value="rad">rad</button>
+                    <button class="op" onclick="button_click(this.value);" value="E">E</button><br>
+                    <button class="op" onclick="button_click(this.value);" value="deg">deg</button>
+                    <button class="op" onclick="button_click(this.value);" value="rad">rad</button><br>
                     <button class="op" onclick="button_click(this.value);" value="i">i</button>
                   </div>
                 </td>
@@ -532,7 +531,7 @@
                   <button class="calc operator" id="op7" onclick="select_operator(this.value);" value="op7">함수</button>
                   <div class="additional" id="op7_atn">
                     <button class="op" onclick="button_click(this.value);" value="exp">exp</button>
-                    <button class="op" onclick="button_click(this.value);" value="log">log</button>
+                    <button class="op" onclick="button_click(this.value);" value="log">log</button><br>
                     <button class="op" onclick="button_click(this.value);" value="sqrt">sqrt</button>
                   </div>
                 </td>
@@ -540,9 +539,9 @@
                   <button class="calc operator" id="op8" onclick="select_operator(this.value);" value="op8">행렬</button>
                   <div class="additional" id="op8_atn">
                     <button class="op" onclick="button_click(this.value);" value="matrix">matrix</button>
-                    <button class="op" onclick="button_click(this.value);" value="det">det</button>
-                    <button class="op" onclick="button_click(this.value);" value="inv">inv</button><br>
-                    <button class="op" onclick="button_click(this.value);" value="A">A</button>
+                    <button class="op" onclick="button_click(this.value);" value="det">det</button><br>
+                    <button class="op" onclick="button_click(this.value);" value="inv">inv</button>
+                    <button class="op" onclick="button_click(this.value);" value="A">A</button><br>
                     <button class="op" onclick="button_click(this.value);" value="B">B</button>
                     <button class="op" onclick="button_click(this.value);" value="C">C</button>
                   </div>
@@ -550,7 +549,7 @@
                 <td>
                   <button class="calc operator" id="op9" onclick="select_operator(this.value);" value="op9">벡터</button>
                   <div class="additional" id="op9_atn">
-                    <button class="op" onclick="button_click(this.value);" value="dot">dot</button>
+                    <button class="op" onclick="button_click(this.value);" value="dot">dot</button><br>
                     <button class="op" onclick="button_click(this.value);" value="cross">cross</button>
                   </div>
                 </td>
@@ -570,5 +569,8 @@
     </center>
     <script src="draw_graph.js" type='text/javascript'> </script>
     <script src="stringToformula.js" type='text/javascript'> </script>
+    <script src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
+    <script src="http://code.jquery.com/ui/1.8.21/jquery-ui.min.js"></script>
+    <script src="jquery.ui.touch-punch.min.js"></script>
   </body>
 </html>
